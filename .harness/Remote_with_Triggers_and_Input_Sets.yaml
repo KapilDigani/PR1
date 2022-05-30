@@ -44,3 +44,4 @@ pipeline:
                                         userGroups: <+input>
                                     approverInputs: []
               tags: {}
+    description: Test
