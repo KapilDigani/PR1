@@ -1,0 +1,29 @@
+inputSet:
+  identifier: "Chetan_Input_Set"
+  name: "Chetan Input Set"
+  orgIdentifier: "default"
+  projectIdentifier: "kapil_digani_project"
+  pipeline:
+    identifier: "Remote_with_Triggers_and_Input_Sets"
+    stages:
+    - stage:
+        identifier: "Approval"
+        type: "Approval"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "echo"
+                type: "ShellScript"
+                spec:
+                  source:
+                    type: "Inline"
+                    spec:
+                      script: "echo \"Testing create\""
+            - step:
+                identifier: "Approvers"
+                type: "HarnessApproval"
+                spec:
+                  approvers:
+                    userGroups:
+                    - "account.Approvers"
