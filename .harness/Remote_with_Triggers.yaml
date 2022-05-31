@@ -23,7 +23,7 @@ pipeline:
                                     source:
                                         type: Inline
                                         spec:
-                                            script: echo "Hello from Feature-3 using Trigger - Demo to Sid"
+                                            script: echo "Hello from Main Branch"
                                     environmentVariables: []
                                     outputVariables: []
                                     executionTarget: {}
