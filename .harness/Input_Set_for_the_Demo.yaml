@@ -1,0 +1,29 @@
+inputSet:
+  identifier: "Input_Set_for_the_Demo"
+  name: "Input Set for the Demo"
+  orgIdentifier: "default"
+  projectIdentifier: "kapil_digani_project"
+  pipeline:
+    identifier: "Remote_with_Triggers_and_Input_Sets"
+    stages:
+    - stage:
+        identifier: "Approval"
+        type: "Approval"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "echo"
+                type: "ShellScript"
+                spec:
+                  source:
+                    type: "Inline"
+                    spec:
+                      script: "echo \"Hello From Feature-6 Branch\""
+            - step:
+                identifier: "Approvers"
+                type: "HarnessApproval"
+                spec:
+                  approvers:
+                    userGroups:
+                    - "account.Approvers"
