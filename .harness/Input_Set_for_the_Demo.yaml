@@ -1,6 +1,7 @@
 inputSet:
   identifier: "Input_Set_for_the_Demo"
   name: "Input Set for the Demo"
+  tags: {}
   orgIdentifier: "default"
   projectIdentifier: "kapil_digani_project"
   pipeline:
@@ -19,7 +20,7 @@ inputSet:
                   source:
                     type: "Inline"
                     spec:
-                      script: "echo \"Hello From Feature-6 Branch\""
+                      script: "echo \"Hello From Main Branch\""
             - step:
                 identifier: "Approvers"
                 type: "HarnessApproval"
