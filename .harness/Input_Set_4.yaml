@@ -21,7 +21,7 @@ inputSet:
                       source:
                         type: "Inline"
                         spec:
-                          script: "echo \"Hello from Input Set 4\""
+                          script: "echo \"Hello from Input Set 4 in Feature-7 Branch\""
                 - step:
                     identifier: "Approvers"
                     type: "HarnessApproval"
