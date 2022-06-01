@@ -1,0 +1,29 @@
+inputSet:
+  identifier: "Input_Set_with_Trigger"
+  name: "Input Set with Trigger"
+  orgIdentifier: "aaaorg"
+  projectIdentifier: "kapil_digani_test"
+  pipeline:
+    identifier: "Remote_Trigger_Input_Set"
+    stages:
+    - stage:
+        identifier: "Approval"
+        type: "Approval"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "echo"
+                type: "ShellScript"
+                spec:
+                  source:
+                    type: "Inline"
+                    spec:
+                      script: "echo \"Input Set - Feature-8 Branch\""
+            - step:
+                identifier: "Approvers"
+                type: "HarnessApproval"
+                spec:
+                  approvers:
+                    userGroups:
+                    - "account.Approvers"
