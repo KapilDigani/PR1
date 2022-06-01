@@ -1,0 +1,31 @@
+inputSet:
+  identifier: "Input_Set_4"
+  name: "Input Set 4"
+  orgIdentifier: "aaaorg"
+  projectIdentifier: "kapil_digani_test"
+  pipeline:
+    identifier: "Remote_using_Template"
+    template:
+      templateInputs:
+        stages:
+        - stage:
+            identifier: "Approval"
+            type: "Approval"
+            spec:
+              execution:
+                steps:
+                - step:
+                    identifier: "echo"
+                    type: "ShellScript"
+                    spec:
+                      source:
+                        type: "Inline"
+                        spec:
+                          script: "echo \"Hello from Input Set 4\""
+                - step:
+                    identifier: "Approvers"
+                    type: "HarnessApproval"
+                    spec:
+                      approvers:
+                        userGroups:
+                        - "account.Approvers"
