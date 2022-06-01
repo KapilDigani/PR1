@@ -1,0 +1,31 @@
+pipeline:
+    name: Remote using Template
+    identifier: Remote_using_Template
+    template:
+        templateRef: Test_Template
+        versionLabel: Version1
+        templateInputs:
+            stages:
+                - stage:
+                      identifier: Approval
+                      type: Approval
+                      spec:
+                          execution:
+                              steps:
+                                  - step:
+                                        identifier: echo
+                                        type: ShellScript
+                                        spec:
+                                            source:
+                                                type: Inline
+                                                spec:
+                                                    script: <+input>
+                                  - step:
+                                        identifier: Approvers
+                                        type: HarnessApproval
+                                        spec:
+                                            approvers:
+                                                userGroups: <+input>
+    tags: {}
+    projectIdentifier: kapil_digani_test
+    orgIdentifier: aaaorg
