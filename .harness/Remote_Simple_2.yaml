@@ -23,7 +23,7 @@ pipeline:
                                     source:
                                         type: Inline
                                         spec:
-                                            script: echo "Hello from the Main Branch"
+                                            script: echo "Hello from the Feature-8 Branch"
                                     environmentVariables: []
                                     outputVariables: []
                                     executionTarget: {}
