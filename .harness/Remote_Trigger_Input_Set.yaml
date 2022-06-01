@@ -1,0 +1,46 @@
+pipeline:
+    name: Remote Trigger Input Set
+    identifier: Remote_Trigger_Input_Set
+    projectIdentifier: kapil_digani_test
+    orgIdentifier: aaaorg
+    tags: {}
+    stages:
+        - stage:
+              name: Approval
+              identifier: Approval
+              description: ""
+              type: Approval
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: ShellScript
+                                name: echo
+                                identifier: echo
+                                spec:
+                                    shell: Bash
+                                    onDelegate: true
+                                    source:
+                                        type: Inline
+                                        spec:
+                                            script: <+input>
+                                    environmentVariables: []
+                                    outputVariables: []
+                                    executionTarget: {}
+                                timeout: 10m
+                          - step:
+                                name: Approvers
+                                identifier: Approvers
+                                type: HarnessApproval
+                                timeout: 1d
+                                spec:
+                                    approvalMessage: |-
+                                        Please review the following information
+                                        and approve the pipeline progression
+                                    includePipelineExecutionHistory: true
+                                    approvers:
+                                        minimumCount: 1
+                                        disallowPipelineExecutor: false
+                                        userGroups: <+input>
+                                    approverInputs: []
+              tags: {}
