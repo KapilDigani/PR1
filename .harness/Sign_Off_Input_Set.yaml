@@ -19,7 +19,7 @@ inputSet:
                   source:
                     type: "Inline"
                     spec:
-                      script: "echo \"Hello from the Main Branch\""
+                      script: "echo \"Hello from the Feature-10 Branch\""
             - step:
                 identifier: "Approvers"
                 type: "HarnessApproval"
