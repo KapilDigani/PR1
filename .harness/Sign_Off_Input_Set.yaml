@@ -1,0 +1,29 @@
+inputSet:
+  identifier: "Sign_Off_Input_Set"
+  name: "Sign Off Input Set"
+  orgIdentifier: "aaaorg"
+  projectIdentifier: "kapil_digani_test"
+  pipeline:
+    identifier: "Signoff_Pipeline"
+    stages:
+    - stage:
+        identifier: "Approval"
+        type: "Approval"
+        spec:
+          execution:
+            steps:
+            - step:
+                identifier: "Echo"
+                type: "ShellScript"
+                spec:
+                  source:
+                    type: "Inline"
+                    spec:
+                      script: "echo \"Hello from the Main Branch\""
+            - step:
+                identifier: "Approvers"
+                type: "HarnessApproval"
+                spec:
+                  approvers:
+                    userGroups:
+                    - "account.Approvers"
