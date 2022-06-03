@@ -16,6 +16,21 @@ pipeline:
                   execution:
                       steps:
                           - step:
+                                type: ShellScript
+                                name: echo
+                                identifier: echo
+                                spec:
+                                    shell: Bash
+                                    onDelegate: true
+                                    source:
+                                        type: Inline
+                                        spec:
+                                            script: echo "Hello Random"
+                                    environmentVariables: []
+                                    outputVariables: []
+                                    executionTarget: {}
+                                timeout: 10m
+                          - step:
                                 name: Approvers
                                 identifier: Approvers
                                 type: HarnessApproval
