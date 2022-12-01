@@ -1,0 +1,30 @@
+pipeline:
+  name: Demo for AXA
+  identifier: Demo_for_AXA
+  projectIdentifier: KD_Git_Ex
+  orgIdentifier: KD
+  tags: {}
+  stages:
+    - stage:
+        name: Echo
+        identifier: Echo
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Echo
+                  identifier: Echo
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "Hello AXA team"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
